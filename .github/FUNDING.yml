@@ -3,3 +3,7 @@
 patreon: soxoj
 github: soxoj
 buy_me_a_coffee: soxoj
+
+
+name: Debug step
+run: echo "Workflow modified in fork"
