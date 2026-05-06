@@ -69,3 +69,12 @@ jobs:
         run: |
           echo "cli: ${{ steps.docker_build_cli.outputs.digest }}"
           echo "web: ${{ steps.docker_build_web.outputs.digest }}"
+
+      -
+        name: Scan Docker image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ktrnholod/maigret_copy:latest'
+          format: 'table'
+          exit-code: '1' 
+          severity: 'CRITICAL,HIGH'
